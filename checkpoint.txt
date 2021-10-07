@@ -1,0 +1,54 @@
+PROCEDURE Dotproduct(var Ps:FLOAT,var dimension:INTEGER,var tab1:ARRAY_OF INTEGER,var tab2:ARRAY_OF INTEGER)
+VAR
+    
+    i:INTEGER:=0;
+BEGIN
+   Ps:=0;
+   FOR i FROM 0 TO dimension STEP 1  DO
+       Ps:=Ps+tab1[i]*tab2[i];
+   END_FOR
+   write("le produit scalaire de deux vecteurs vaut:"+Ps)
+END
+
+
+FUNCTION Dotproduc(dimension:INTEGER,var tab1:ARRAY_OF INTEGER,var tab2:ARRAY_OF INTEGER) : return_type
+VAR
+    i:INTEGER:=0;
+BEGIN
+    Ps:=0;
+   FOR i FROM 0 TO dimension STEP 1  DO
+       Ps:=Ps+tab1[i]*tab2[i];
+   END_FOR
+   RETURN ps;
+END
+
+FUNCTION setDimension() : INTEGER
+VAR
+    n:INTEGER
+BEGIN
+read(n);
+RETURN n;
+   END
+PROCEDURE readarray(n:INTEGER,var T:ARRAY_OF INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n STEP 1  DO
+    write("enter les elements du tableau1");
+    read(T[i]);
+END
+ALGORITHM Dotproduct_orthogonale
+VAR
+dimension:INTEGER;
+tableau1,tableau2:ARRAY_OF INTEGER[];
+produitscalaire:INTEGER:=0;    
+BEGIN
+dimension:=setDimension();
+readarray(dimension,tab1);
+readarray(dimension,tab2);
+Dotproduct(produitscalaire, dimension,tab1,tab2);
+IF (produitscalire=0) THEN
+    write("les deux vecteurs sont orthogonale");
+END_IF
+
+END
